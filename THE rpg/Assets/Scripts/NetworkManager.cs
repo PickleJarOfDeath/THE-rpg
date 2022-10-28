@@ -21,8 +21,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
     }
@@ -32,7 +31,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
-    public void CreateRoom (string roomName)
+    public void CreateRoom(string roomName)
     {
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = (byte)maxPlayers;
@@ -40,13 +39,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom(roomName, options);
     }
 
-    public void JoinRoom (string roomName)
+    public void JoinRoom(string roomName)
     {
         PhotonNetwork.JoinRoom(roomName);
     }
 
     [PunRPC]
-    public void ChangeScene (string sceneName)
+    public void ChangeScene(string sceneName)
     {
         PhotonNetwork.LoadLevel(sceneName);
     }

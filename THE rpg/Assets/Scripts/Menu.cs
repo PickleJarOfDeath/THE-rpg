@@ -30,7 +30,6 @@ public class Menu : MonoBehaviourPunCallbacks, ILobbyCallbacks
     private List<GameObject> roomButtons = new List<GameObject>();
     private List<RoomInfo> roomList = new List<RoomInfo>();
 
-    // Start is called before the first frame update
     void Start()
     {
         createRoomButton.interactable = false;
